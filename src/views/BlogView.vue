@@ -1,8 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an home page</h1>
-    <h3>Blog</h3>
-    <RouterLink :to="{ name: 'blog', params: { id: 3, version: 'foo' } }">New Release!</RouterLink>
+    <h1>BlogView</h1>
   </div>
 </template>
 
