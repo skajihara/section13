@@ -1,3 +1,3 @@
 <template>
-  <h2>Home</h2>
+  <h3>Likes</h3>
 </template>
