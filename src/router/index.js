@@ -31,9 +31,15 @@ const router = createRouter({
           })
         }
         return resolve({ top: 0, left: 0, behavior: 'smooth' })
-      }, 2000)
+      }, 1000)
     })
   }
+})
+router.beforeEach(async (to, from) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000))
+  console.log(to, from)
+  console.log('beforeEach')
+  if (to.name === 'blog') return { name: 'home' }
 })
 
 export default router
