@@ -18,28 +18,15 @@ const router = createRouter({
         console.log('beforeEnter')
       }
     }
-  ],
-  scrollBehavior(to, from, savedPosition) {
-    console.log(to, from, savedPosition)
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        if (savedPosition) {
-          return resolve(savedPosition)
-        }
-        if (to.hash) {
-          return resolve({
-            el: to.hash,
-            top: 20,
-            behavior: 'smooth'
-          })
-        }
-        return resolve({ top: 0, left: 0, behavior: 'smooth' })
-      }, 1000)
-    })
-  }
+  ]
 })
 router.beforeEach(() => {
   console.log('beforeEach')
 })
-
+router.beforeResolve(() => {
+  console.log('beforeResolve')
+})
+router.afterEach(() => {
+  console.log('afterEach')
+})
 export default router
