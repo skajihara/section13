@@ -27,8 +27,9 @@ const router = createRouter({
     {
       path: '/:catchAll(.*)*',
       name: 'notFound',
-      // component: () => import('../views/NotFound.vue')
-      redirect: { name: 'home' }
+      props: true,
+      component: () => import('../views/NotFound.vue')
+      // redirect: { name: 'home' }
     }
   ]
 })
