@@ -18,7 +18,7 @@ onUnmounted(() => {
 </script>
 <template>
   <h2>Blog(id: {{ $route.params.id }})</h2>
-  <p>ver: {{ $route.params.version }}</p>
+  <h2>ver: {{ $route.params.version }}</h2>
   <RouterLink
     :to="{
       name: 'blog',

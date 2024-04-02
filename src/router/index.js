@@ -12,6 +12,7 @@ const router = createRouter({
     },
     {
       path: '/about',
+      alias: ['/me'],
       name: 'about',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -20,13 +21,14 @@ const router = createRouter({
     },
     {
       path: '/blog/:id*',
-      name: 'blog',
+      alias: '/article/:id*',
       component: BlogView
     },
     {
       path: '/:catchAll(.*)*',
       name: 'notFound',
-      component: () => import('../views/NotFound.vue')
+      // component: () => import('../views/NotFound.vue')
+      redirect: { name: 'home' }
     }
   ]
 })
