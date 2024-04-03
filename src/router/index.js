@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import BlogView from '../views/BlogView.vue'
+// import HomeView from '../views/HomeView.vue'
+// import BlogView from '../views/BlogView.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -9,13 +9,13 @@ const router = createRouter({
       path: '/',
       name: 'home',
       meta: { transition: 'fade' },
-      component: HomeView
+      component: () => import('../views/HomeView.vue')
     },
     {
       path: '/blog/:id',
       name: 'blog',
       meta: { requiredAuth: true, transition: 'slide' },
-      component: BlogView,
+      component: () => import('../views/BlogView.vue'),
       beforeEnter() {
         console.log('beforeEnter')
       }
