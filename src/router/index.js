@@ -8,11 +8,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      meta: { transition: 'fade' },
       component: HomeView
     },
     {
       path: '/blog/:id',
       name: 'blog',
+      meta: { requiredAuth: true, transition: 'slide' },
       component: BlogView,
       beforeEnter() {
         console.log('beforeEnter')
